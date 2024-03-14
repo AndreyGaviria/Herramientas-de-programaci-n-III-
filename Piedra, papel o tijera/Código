@@ -1,0 +1,96 @@
+using System;
+
+class TallerPptAndreyGaviria
+{
+    static void Main(string[] args)
+    {
+        bool seguirJugando = true;
+
+        while (seguirJugando)
+        {
+            Console.WriteLine("Juego de Piedra, Papel o Tijera");
+            int rondas = 5;
+            int rondasJugadas = 0;
+            int victoriasJugador = 0;
+            int victoriasComputadora = 0;
+
+            while (rondasJugadas < rondas)
+            {
+                rondasJugadas++;
+                Console.WriteLine($"\nRonda {rondasJugadas}:");
+
+                string opcionJugador;
+                do
+                {
+                    Console.WriteLine("Elige piedra, papel o tijera:");
+                    opcionJugador = Console.ReadLine().ToLower();
+
+                    if (opcionJugador != "piedra" && opcionJugador != "papel" && opcionJugador != "tijera")
+                    {
+                        Console.WriteLine("Opción inválida. Por favor, elige piedra, papel o tijera.");
+                    }
+                } while (opcionJugador != "piedra" && opcionJugador != "papel" && opcionJugador != "tijera");
+
+                Random rand = new Random();
+                int numeroAleatorio = rand.Next(1, 4);
+                string opcionComputadora = "";
+                switch (numeroAleatorio)
+                {
+                    case 1:
+                        opcionComputadora = "piedra";
+                        break;
+                    case 2:
+                        opcionComputadora = "papel";
+                        break;
+                    case 3:
+                        opcionComputadora = "tijera";
+                        break;
+                    default:
+                        opcionComputadora = "";
+                        break;
+                }
+
+                Console.WriteLine($"Has elegido: {opcionJugador}");
+                Console.WriteLine($"La computadora ha elegido: {opcionComputadora}");
+
+                if (opcionJugador == opcionComputadora)
+                {
+                    Console.WriteLine("Empate en esta ronda.");
+                }
+                else if ((opcionJugador == "piedra" && opcionComputadora == "tijera") ||
+                         (opcionJugador == "papel" && opcionComputadora == "piedra") ||
+                         (opcionJugador == "tijera" && opcionComputadora == "papel"))
+                {
+                    Console.WriteLine("¡Ronda ganada!");
+                    victoriasJugador++;
+                }
+                else
+                {
+                    Console.WriteLine("¡Ronda perdida!");
+                    victoriasComputadora++;
+                }
+            }
+
+            if (victoriasJugador > victoriasComputadora)
+            {
+                Console.WriteLine("\n¡Juego ganado! ");
+            }
+            else if (victoriasJugador < victoriasComputadora)
+            {
+                Console.WriteLine("\nJuego perdido. ");
+            }
+            else
+            {
+                Console.WriteLine("\nEmpate");
+            }
+
+            Console.WriteLine("\n¿Quieres seguir jugando? (s/n)");
+            char respuesta = Console.ReadKey().KeyChar;
+            seguirJugando = (respuesta == 's' || respuesta == 'S');
+
+            Console.Clear(); // Limpiar la consola para la siguiente partida
+        }
+
+        Console.WriteLine("\nGracias por jugar. ");
+    }
+}
