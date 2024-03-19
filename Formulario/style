@@ -1,5 +1,12 @@
-#dimension{
-  width: 200;
-  height: 60;
-  border: black 1px solid;
+
+#boton{
+    background-color: white;
+    position: relative;
+    top: 20px;
+}
+
+#boos{
+    background-color: white;
+    position: relative;
+    top: 30px;
 }
