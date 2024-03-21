@@ -13,67 +13,67 @@
   </head>
 
   <body>
-    <h1 class="TituloPrincipal"> Gestión Biblioteca </h1>
+    <h1 class="TituloPrincipal" style="padding-bottom: 2% ;"> Gestión Biblioteca </h1>
     <div class="formularioLibrosContainer">
       <form action="/my-handling-form-page" method="post" id="formularioLibro">
    </div>
 
    <div class="mainContainer">   
-        <div class="form-container">
+        <div class="form-container" id="form">
 
             <h2 class="TituloForm"> Registrar nuevo libro </h2>
 
-        <form>
-        <div class="mb-3">
-            <label for="tituloLibro" class="form-label">Titulo del libro: </label>
-            <input type="text" class="form-control" id="tituloLibro" aria-describedby="tituloLibro" required>
-        </div>
+            <form>
+                <div class="mb-3">
+                        <label for="tituloLibro" class="form-label">Titulo del libro: </label>
+                        <input type="text" class="form-control" id="tituloLibro" aria-describedby="tituloLibro" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="autor" class="form-label">Autor: </label>
+                        <input type="text" class="form-control" id="autor" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="editorial" class="form-label">Editorial: </label>
+                        <input type="text" class="form-control" id="editorial" aria-describedby="editorial"required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label">Categoría: </label>
+                        <input type="text" class="form-control" id="categoria" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de publicación:</label>
+                        <p></p>
+                        <input type="date" name="fecha" id="fecha" required>
+                    </div>
+                    </div>
+                
         
-        <div class="mb-3">
-            <label for="autor" class="form-label">Autor: </label>
-            <input type="text" class="form-control" id="autor" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="editorial" class="form-label">Editorial: </label>
-            <input type="text" class="form-control" id="editorial" aria-describedby="editorial"required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría: </label>
-            <input type="text" class="form-control" id="categoria" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha de publicación:
-            </label>
-            <input type="date" name="fecha" id="fecha" required>
-        </div>
-        </div>
-        
-        
-        <div class="mb-3 form-check" id="boton">
-        <button type="submit" class="btn btn-primary">Registrar libro</button>
-        </form>
-        </div>        
-            
+                <div class="mb-3 form-check" id="boton">
+                    <button type="submit" class="btn btn-primary">Registrar libro</button>
             </form>
-            
-        <div class="container mt-3" id="boos">
-            <h2>Lista de libros</h2>          
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Titulo del libro</th>
-                    <th>Autor</th>
-                    <th>Editorial</th>
-                    <th>Categoría</th>
-                    <th>Fecha</th>
-                </tr>
-                </thead>
-            <tbody id="registroTabla">
-            </tbody>
-            </table>
+        </div>        
+                
+                
+            <div class="container mt-3" id="boos">
+                <h2>Lista de libros</h2>          
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Titulo del libro</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Categoría</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registroTabla">
+
+                    </tbody>
+                </table>
         </div>
     </div>   
 
