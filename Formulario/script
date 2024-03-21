@@ -39,16 +39,15 @@ document.addEventlistener("DOMContentLoaded", function(){
     
     librosRegistrados.forEach(function(libro, indice){
     
-            const fila= '
+            const fila= 
           <tr>
             <td>${libro.tituloLibro}</td>
-          <td>${libro.autor}</td>
-          <td>${libro.editortial}</td>
-          <td>${libro.categoria}</td>
-                   <td>${libro.fecha}</td>
+            <td>${libro.autor}</td>
+            <td>${libro.editortial}</td>
+            <td>${libro.categoria}</td>
+            <td>${libro.fecha}</td>
         </tr>        
-      
-      ';
+  
       filaTabla.innerHTML += fila;
     });
     
